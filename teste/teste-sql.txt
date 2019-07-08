@@ -1,0 +1,7 @@
+Nome: João V. A. Porto
+
+1) SELECT * FROM en_filme ORDER BY data_lancamento LIMIT 1;
+
+2) SELECT * FROM en_cliente NATURAL JOIN (SELECT id_cliente, COUNT(id_cliente) as alugueis FROM en_aluguel GROUP BY id_cliente) AS count ORDER BY alugueis;
+
+3) SELECT * FROM en_cliente NATURAL JOIN (SELECT id_cliente, COUNT(id_cliente) as alugueis FROM en_aluguel GROUP BY id_cliente) AS count NATURAL JOIN (SELECT id_cliente, SUM(valor) as total_gasto, EXTRACT(YEAR FROM data_aluguel) as ano FROM en_aluguel GROUP BY id_cliente, data_aluguel) AS sum ORDER BY total_gasto DESC;

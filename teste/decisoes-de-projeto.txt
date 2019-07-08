@@ -1,0 +1,7 @@
+1.	Por pragmatismo, as implementações de AluguelDAO e FilmeDAO seguiram à risca o exemplo da implementação de ClienteDAO.
+2.	A implementação de ClienteDAO foi alterada em um único ponto garantindo o tratamento análogo à ressalva feita com relação
+	à exclusão de Filme: Cliente pode ter um relacionamento com Aluguel, portanto, em sua exclusão, é possível que também
+	seja necessário excluir entidades Aluguel.
+3.	Mais uma vez, por pragmatismo, decidiu-se usar instâncias de ClienteDAOImpl e FilmeDAOImpl para a implementação do método
+	find de AluguelDAO.
+4.	Diferentemente do que ocorre em ClienteDAOImpl, os métodos list de FilmeDAO e AluguelDAO iteram sobre os métodos find.
